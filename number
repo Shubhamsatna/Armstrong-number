@@ -1,0 +1,24 @@
+public class ArmstrongChecker {
+
+    public static boolean isArmstrongNumber(int num) {
+        String numStr = Integer.toString(num);
+        int power = numStr.length();
+        int total = 0;
+
+        for (int i = 0; i < power; i++) {
+            int digit = Character.getNumericValue(numStr.charAt(i));
+            total += Math.pow(digit, power);
+        }
+
+        return total == num;
+    }
+
+    public static void main(String[] args) {
+        int number = 153;
+        if (isArmstrongNumber(number)) {
+            System.out.println(number + " is an Armstrong number.");
+        } else {
+            System.out.println(number + " is not an Armstrong number.");
+        }
+    }
+}
